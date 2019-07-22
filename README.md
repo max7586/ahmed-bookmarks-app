@@ -5,7 +5,7 @@
 ### As a user:
 
 * I can add bookmarks to my bookmark list. Bookmarks contain:
-++ title
+..* title
 url link
 description
 rating (1-5)
