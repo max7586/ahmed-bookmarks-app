@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bookmarks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+   <header class='row' role='banner'>
+    <h1>Bookmarks</h1>
+  </header> 
+    <main role='main'>
+        <!-- Controls div -->
+        <section class="row">
+            <div class='controls'>
+                <!-- New bookmark button -->
+                <button id='js-new-bookmark'>NEW BOOKMARK</button>
+                <!-- End bookmark button -->
+    
+                <!-- Filter -->
+                <select class='filter-control' id='js-filter-control' name='filter' aria-label='Filter ratings by minimum rating'>
+                    <option value='0'>All</option>
+                    <option value='5'>5 stars</option>
+                    <option value='4'>4+ stars</option>
+                    <option value='3'>3+ stars</option>
+                    <option value='2'>2+ stars</option>
+                </select>
+                <label for='filter-control' id='filter-label'>Filter </label>
+                <!-- End filter -->
+    
+            </div>
+        </section>
+        <!-- End controls div -->
+    
+        <!-- Form container -->
+        <section class='row'>
+            <div id='js-form-container' class='form-container'></div>
+        </section>
+        <!-- End form container -->
+    
+        <!-- Error container -->
+        <section class='row error-message-container'>
+            <span id='js-error-message'>
+            </span>
+        </section>
+        <!-- End error container -->
+    
+        <!-- Bookmark container -->
+        <section class="row">
+            <div class='bookmark-container'>
+                <ul class='js-bookmarks-container'></ul>
+            </div>
+        </section>
+        <!-- End bookmark container -->
+    </main>
+    
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="scripts/extend.js"></script>
+    <script type="text/javascript" src="scripts/store.js"></script>
+    <script type="text/javascript" src="scripts/generator.js"></script>
+    <script type="text/javascript" src="scripts/bookmarks.js"></script>
+    <script type="text/javascript" src="scripts/api.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <!-- End scripts -->
+
+</body>
+</html>
