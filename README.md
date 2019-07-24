@@ -1,6 +1,6 @@
 # Bookmarks app
 
-**[Bookmarks](https://thinkful-ei24.github.io/ahmed-bookmarks-app/)** is a simple bookmark management app built as part of [Thinkful's Engineering Immersion](https://www.thinkful.com/bootcamp/web-development/full-time/) program. This app is Use fetch for AJAX calls and jQuery for DOM manipulation. This app is totally responsive. This app is Followed by semantic HTML and the React-ful design pattern. And this app also have a11y.
+**[Bookmarks](https://max7586.github.io/ahmed-bookmarks-app/)** is a simple bookmark management app built as part of [Thinkful's Engineering Immersion](https://www.thinkful.com/bootcamp/web-development/full-time/) program.This application allows a user to add, edit and delete their favorite bookmarks. This app is Use fetch for AJAX calls and jQuery for DOM manipulation. This app is totally responsive. This app is Followed by semantic HTML and the React-ful design pattern. And this app also have a11y.
 
 ### As a user:
 
