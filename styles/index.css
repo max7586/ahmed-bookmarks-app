@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.container, h1 {
+  max-width: 1000px;
+  margin: 30px 0;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+form#js-form {
+  max-width: 800px;
+  border: 1px solid black;
+  padding: 20px;
+  background: rgba(211, 211, 211, 0.817);
+  border-radius: 7px;
+}
+
+#js-form label {
+  
+  display: block;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+.form-field {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top:15px;
+}
+
+.form-controls {
+  margin-top: 20px;
+}
+
+.form-controls > .button {
+  margin-right:20px;
+}
+
+input[type='text'] {
+  height: 30px;
+  width: 300px;
+}
+
+.button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+section {
+  margin-top:30px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border: 2px solid black;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 7px; 
+}
+
+li .header {
+  padding: 10px;
+  background: lightgray;
+  cursor: pointer;
+}
+
+li .body {
+  padding: 10px;
+}
+
+li [class*='fa-chevron-'] {
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  right: 20px;
+  top: 10px;
+}
+
+li i {
+  color: #fdcb6e;
+}
+
+.rating {
+  position: relative;
+}
+
+.remove-bookmark {
+  position: absolute;
+  right: 2px;
+  bottom: -10px;
+  padding: 10px;
+}
+
+.remove-bookmark i {
+  color: #d63031;
+}
+
+.remove-bookmark i:hover {
+  font-weight: bold;
+}
+
+.edit-bookmark {
+  position: absolute;
+  right: 30px;
+  bottom: -10px;
+  padding: 10px;
+}
+
+.edit-bookmark i {
+  color: #2d3436;
+}
+
+.edit-bookmark i:hover {
+  font-weight: bold;
+}
+
+.button.small {
+  padding: 6px 19px;
+  margin: 10px 0;
+}
+
+.bookmark-controls {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.bookmark-controls label {
+  position: absolute;
+  top: -25px;
+  left: 230px;
+}
+
+.bookmark-controls select {
+  height: 50px;
+  width: 200px;
+  background: white;
+  margin-left: 20px;
+}
+
+.js-error-message {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  color: white;
+  background: rgba(232, 177, 177, 0.824);
+  max-width:800px;
+}
+
+.js-error-message span {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  cursor: pointer;
+}
+
+.js-error-message span i {
+  font-size: 25px;
+}
+
+.js-error-message span i:hover {
+  color: #d63031;
+}
+
+.hidden {
+  display: none;
+}
+
+.js-no-bookmarks-intro button{
+  margin-top: 20px;
+}
+
+.description {
+  width: 400px;
+  height: 100px;
+}
+
+.description textarea {
+  width: 100%;
+  height: 100%;
+}
+
+#js-edit-form .description {
+  height: 125px;
+}
+
+#js-edit-form textarea {
+  height: 80%;
+}
+
+#js-edit-form .rating label {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+  .bookmark-controls button, .bookmark-controls label,  .bookmark-controls select {
+    display: block;
+    width: 100%;
+  }
+
+  .bookmark-controls label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    position: static;
+  }
+
+  .bookmark-controls select {
+    margin: 0;
+  }
+
+  #js-form .form-field {
+    display: block;
+  }
+
+  #js-form fieldset {
+    margin-top: 30px;
+  }
+
+  #js-form fieldset label {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  #js-form input[type='text'] {
+    width: 100%;
+  }
+
+  .description textarea {
+    width: 77%;
+  }
+
+  #js-edit-form textarea {
+    width: 89%;
+    height: 100px;
+  }
+
+  #js-edit-form > div {
+    margin-top: 10px;
+  }
+
+  #js-edit-form .rating {
+    margin: 15px 0;
+  }
+
+  #js-edit-form .rating label {
+    margin-right: 10px;
+  }
+}

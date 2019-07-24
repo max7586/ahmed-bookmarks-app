@@ -4,7 +4,6 @@
 const Api = (function() {
   const BASE_URL = 'https://thinkful-list-api.herokuapp.com/ahmed';
 
-
   function bookmarkApi(...args) {
     let error;
     return fetch(...args)
@@ -22,7 +21,6 @@ const Api = (function() {
         return jsonData;
       });
   }
-  
 
   function getBookmarks() {
     return bookmarkApi(`${BASE_URL}/bookmarks`);

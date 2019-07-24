@@ -1,5 +1,7 @@
 'use strict';
 
+/* globals Store, Api, Display */
+
 $.prototype.extend({
     serializeJson: function () {
         const formData = new FormData(this[0]);
@@ -9,63 +11,46 @@ $.prototype.extend({
     }
 });
 
-/* globals Store, Api, Templates */
-
 const BookmarkList = (function () {
-    // rendering functions
 
     function render(filteredList = null) {
         if (Store.isAdding) {
-            $('#js-form').html(Templates.form());
+            $('#js-form').html(Display.form());
             $('#js-form').show();
         } else {
             $('#js-form').html('');
             $('#js-form').hide();
         }
-
         if (!Store.list.length) {
             $('.js-list-header').html('');
             $('.js-bookmark-list').html('');
-            return $('.js-no-bookmarks-intro').html(Templates.noBookmarks());
+            return $('.js-no-bookmarks-intro').html(Display.noBookmarks());
         }
 
         const bookmarks = filteredList ? filteredList : Store.list;
         const bookmarkTemplate = bookmarks.map(bookmark => buildBookmarkHtml(bookmark));
 
         $('.js-no-bookmarks-intro').html('');
-        $('.js-list-header').html(Templates.listHeader());
+        $('.js-list-header').html(Display.listHeader());
         $('.js-bookmark-list').html(bookmarkTemplate);
     }
 
     function renderError(message) {
-        $('.js-error-message').html(Templates.error(message));
+        $('.js-error-message').html(Display.error(message));
         $('.js-error-message').show();
     }
 
     function buildBookmarkHtml(bookmark) {
         if (bookmark.isEditing) {
-            return Templates.editForm(bookmark);
+            return Display.editForm(bookmark);
         } else if (bookmark.isExpanded) {
-            return Templates.bookmarkExpandedView(bookmark);
+            return Display.bookmarkExpandedView(bookmark);
         } else {
-            return Templates.bookmarkListView(bookmark);
+            return Display.bookmarkListView(bookmark);
         }
     }
 
-    // Event handlers
-    function displayForm() {
-        $('.container').on('click', '#new-bookmark', function () {
-            Store.isAdding = true;
-            render();
-        });
-    }
-
-    function formClose() {
-        $('.container').on('click', '#close-form', function () {
-            Store.isAdding = false;
-            render();
-        });
-    }
+    // handlers
 
     function formSubmit() {
         $('.container').on('submit', 'form#js-form', function (e) {
@@ -81,6 +66,28 @@ const BookmarkList = (function () {
                 });
         });
     }
+    function filterByRating() {
+        $('.container').on('change', 'select', function () {
+            const rating = $(this).val();
+            const filteredList = Store.filterByRating(rating);
+            render(filteredList);
+        });
+    }
+    function displayForm() {
+        $('.container').on('click', '#new-bookmark', function () {
+            Store.isAdding = true;
+            render();
+        });
+    }
+
+    function formClose() {
+        $('.container').on('click', '#close-form', function () {
+            Store.isAdding = false;
+            render();
+        });
+    }
+
+
 
     function toggleBookmarkView() {
         $('.js-bookmark-list').on('click', '.header', function () {
@@ -101,14 +108,6 @@ const BookmarkList = (function () {
                 .catch(error => {
                     renderError(error.message);
                 });
-        });
-    }
-
-    function filterByRating() {
-        $('.container').on('change', 'select', function () {
-            const rating = $(this).val();
-            const filteredList = Store.filterByRating(rating);
-            render(filteredList);
         });
     }
 
@@ -153,7 +152,6 @@ const BookmarkList = (function () {
         toggleEditForm();
         editFormSubmit();
     }
-
 
     return {
         render,
